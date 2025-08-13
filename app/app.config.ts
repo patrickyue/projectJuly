@@ -1,3 +1,6 @@
+import { componentNames } from "#components";
+import { mdiGithub, mdiFacebook } from "@mdi/js";
+
 export default defineAppConfig({
   ui: {
     colors: {
@@ -9,39 +12,34 @@ export default defineAppConfig({
     logo: '/favicon.ico',
   },
   footer: {
-    notice: 'A Starter Template by Estéban "Barbapapazes"',
+    homepageUrl: 'https://paisonrealestate.com/',
+    componentName: 'Paison Real Estate',
     smallLinks: [
       {
-        label: 'Privacy Policy',
+        text: 'Privacy Policy',
         to: '/privacy',
       },
       {
-        label: 'Terms of Service',
+        text: 'Terms of Service',
         to: '/terms',
       },
       {
-        label: 'Contact',
-        to: 'mailto:esteban@soubiran.dev',
+        text: 'Contact',
+        to: 'mailto:',
       },
     ],
   },
   socials: [
     {
       title: 'GitHub',
-      icon: 'i-simple-icons-github',
+      icon: mdiGithub,
       to: 'https://github.com/barbapapazes/gavarnie',
       target: '_blank',
     },
     {
       title: 'X',
-      icon: 'i-simple-icons-x',
+      icon:  mdiFacebook,
       to: 'https://x.com/soubiran_',
-      target: '_blank',
-    },
-    {
-      title: 'LinkedIn',
-      icon: 'i-simple-icons-linkedin',
-      to: 'https://linkedin.com/in/esteban25',
       target: '_blank',
     },
   ],

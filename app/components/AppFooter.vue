@@ -1,31 +1,33 @@
-<script lang="ts" setup>
-const title = useRuntimeConfig().public.name
-
-const appConfig = useAppConfig()
-const notice = appConfig.footer.notice
-const smallLinks = appConfig.footer.smallLinks
-const socials = appConfig.socials
-</script>
-
 <template>
-  <UFooter
-    :ui="{ left: 'text-sm text-gray-600 dark:text-gray-300' }"
+  <v-footer
+    class="d-flex align-center justify-center ga-2 flex-wrap flex-grow-1 py-3"
+    color="surface-light"
   >
-    <template #left>
-      {{ title }} - {{ notice }}
-    </template>
-
-    <UNavigationMenu :items="smallLinks" />
-
-    <template #right>
-      <UButton
-        v-for="social in socials"
-        :key="social.title"
-        square
-        color="neutral"
-        variant="ghost"
-        v-bind="social"
-      />
-    </template>
-  </UFooter>
+    <v-container>
+      <v-row>
+        <v-col
+          cols="12"
+          md="6"
+          lg="3"
+          class="text-center justify-center"
+          v-for="link in smallLinks"
+          :key="link.text"
+        >
+          <v-btn :href="link.to" target="_blank" :text="link.text" variant="text">
+          </v-btn>
+        </v-col>
+        <v-col cols="12" class="text-center">
+          <div class="flex-1-0-100 text-center mt-2">
+            &copy;{{ new Date().getFullYear() }} —
+            <strong>{{ componentName }}.&nbsp;</strong>All rights reserved.
+          </div>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-footer>
 </template>
+<script lang="ts" setup>
+const appConfig = useAppConfig();
+const componentName = appConfig.footer.componentName;
+const smallLinks = appConfig.footer.smallLinks;
+</script>
