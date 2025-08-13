@@ -1,13 +1,30 @@
 const isProd = process.env.NODE_ENV === 'production'
+import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
+import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
+  build: {
+    transpile: ['vuetify'],
+  },
   modules: [
-    '@nuxt/ui',
     '@nuxt/eslint',
     '@nuxthub/core',
     'nuxt-auth-utils',
     'nuxt-security',
+    (_options, nuxt) => {
+      nuxt.hooks.hook('vite:extendConfig', (config) => {
+        // @ts-expect-error
+        config.plugins.push(vuetify({ autoImport: true }))
+      })
+    },
   ],
+  vite: {
+    vue: {
+      template: {
+        transformAssetUrls,
+      },
+    },
+  },
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
   colorMode: {
