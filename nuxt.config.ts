@@ -2,7 +2,7 @@ const isProd = process.env.NODE_ENV === 'production'
 
 export default defineNuxtConfig({
   modules: [
-    '@nuxt/ui-pro',
+    '@nuxt/ui',
     '@nuxt/eslint',
     '@nuxthub/core',
     'nuxt-auth-utils',
