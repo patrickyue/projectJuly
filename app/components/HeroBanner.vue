@@ -1,6 +1,6 @@
 <template>
   <v-container fluid class="pa-0">
-    <v-parallax src="/assets/images/docks.jpg" :height="400">
+    <v-parallax src="/assets/images/gavarnie.jpg" :height="600">
       <v-row align="center" justify="center" class="fill-height">
         <v-col cols="12" md="8" class="text-center">
           <h1 class="text-h2 font-weight-bold text-white mb-4">Welcome to ProjectJuly</h1>
