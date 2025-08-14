@@ -1,4 +1,4 @@
-import { mdiGithub, mdiFacebook } from "@mdi/js";
+import { mdiGithub, mdiFacebook } from '@mdi/js'
 
 export default defineAppConfig({
   ui: {
@@ -37,7 +37,7 @@ export default defineAppConfig({
     },
     {
       title: 'X',
-      icon:  mdiFacebook,
+      icon: mdiFacebook,
       to: 'https://x.com/soubiran_',
       target: '_blank',
     },

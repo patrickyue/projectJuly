@@ -1,11 +1,9 @@
-const isProd = process.env.NODE_ENV === 'production'
 import vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 import { defineNuxtConfig } from 'nuxt/config'
 
+const isProd = process.env.NODE_ENV === 'production'
+
 export default defineNuxtConfig({
-  build: {
-    transpile: ['vuetify'],
-  },
   modules: [
     '@nuxt/eslint',
     '@nuxthub/core',
@@ -18,13 +16,6 @@ export default defineNuxtConfig({
       })
     },
   ],
-  vite: {
-    vue: {
-      template: {
-        transformAssetUrls,
-      },
-    },
-  },
   devtools: { enabled: true },
   runtimeConfig: {
     public: {
@@ -35,6 +26,9 @@ export default defineNuxtConfig({
       key: '',
       from: '',
     },
+  },
+  build: {
+    transpile: ['vuetify'],
   },
   routeRules: {
     '/api/me': {
@@ -63,6 +57,13 @@ export default defineNuxtConfig({
     database: true,
     blob: true,
     kv: true,
+  },
+  vite: {
+    vue: {
+      template: {
+        transformAssetUrls,
+      },
+    },
   },
   csurf: {
     methodsToProtect: ['POST', 'PUT', 'PATCH', 'DELETE'],
