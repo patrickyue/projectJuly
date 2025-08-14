@@ -11,7 +11,6 @@ export default defineAppConfig({
     logo: '/favicon.ico',
   },
   footer: {
-    homepageUrl: 'https://paisonrealestate.com/',
     componentName: 'KaKa\'s Home',
     smallLinks: [
       {
