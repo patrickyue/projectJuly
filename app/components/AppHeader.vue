@@ -42,6 +42,31 @@ const { $csrfFetch } = useNuxtApp();
 
 const { loggedIn, session, user } = useUserSession();
 
+const items = [
+  [
+    {
+      label: "Profile",
+      to: "/profile",
+      icon: "i-ph-user-duotone",
+    },
+  ],
+  [
+    {
+      label: "Logout",
+      icon: "i-ph-sign-out-duotone",
+      onSelect: async () => {
+        await $csrfFetch("/api/_auth/session", {
+          method: "DELETE",
+        });
+
+        session.value = {} as UserSession;
+
+        await navigateTo("/");
+      },
+    },
+  ],
+];
+
 const title = useRuntimeConfig().public.name;
 const icon = useAppConfig().app.logo;
 
