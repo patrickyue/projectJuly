@@ -1,5 +1,4 @@
-import { componentNames } from "#components";
-import { mdiGithub, mdiFacebook, mdiHome } from "@mdi/js";
+import { mdiGithub, mdiFacebook } from "@mdi/js";
 
 export default defineAppConfig({
   ui: {
