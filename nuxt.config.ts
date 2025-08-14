@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     'nuxt-security',
     (_options, nuxt) => {
       nuxt.hooks.hook('vite:extendConfig', (config) => {
-        // @ts-expect-error, Vuetify types
+        // @ts-expect-error, Vuetify types are not recognized
         config.plugins.push(vuetify({ autoImport: true }))
       })
     },
