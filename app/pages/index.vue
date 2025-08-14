@@ -95,7 +95,7 @@
               height="200px"
               cover
             >
-              <v-card-title class="text-white" v-text="card.title"></v-card-title>
+              <v-card-title class="text-white">{{ card.title }}</v-card-title>
             </v-img>
 
             <v-card-actions>
