@@ -1,5 +1,5 @@
 import { componentNames } from "#components";
-import { mdiGithub, mdiFacebook } from "@mdi/js";
+import { mdiGithub, mdiFacebook, mdiHome } from "@mdi/js";
 
 export default defineAppConfig({
   ui: {
@@ -13,7 +13,7 @@ export default defineAppConfig({
   },
   footer: {
     homepageUrl: 'https://paisonrealestate.com/',
-    componentName: 'Paison Real Estate',
+    componentName: 'KaKa\'s Home',
     smallLinks: [
       {
         text: 'Privacy Policy',

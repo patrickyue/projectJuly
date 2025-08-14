@@ -3,7 +3,7 @@
     <v-parallax src="/assets/images/gavarnie.jpg" :height="600">
       <v-row align="center" justify="center" class="fill-height">
         <v-col cols="12" md="8" class="text-center">
-          <h1 class="text-h2 font-weight-bold text-white mb-4">Welcome to ProjectJuly</h1>
+          <h1 class="text-h2 font-weight-bold text-white mb-4">Welcome to KaKa's Home</h1>
           <p class="text-h5 text-white mb-6">
             Your next generation web application platform
           </p>

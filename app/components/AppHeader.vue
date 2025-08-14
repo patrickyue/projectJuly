@@ -16,7 +16,7 @@
       <v-app-bar-nav-icon @click="sideBar = !sideBar" class="d-flex"></v-app-bar-nav-icon>
     </template>
 
-    <v-app-bar-title>Application Bar</v-app-bar-title>
+    <v-app-bar-title>KaKa's Home</v-app-bar-title>
 
     <v-toolbar-items>
       <v-list-item link title="Home"></v-list-item>
@@ -41,31 +41,6 @@ import { mdiLock, mdiAccount } from "@mdi/js";
 const { $csrfFetch } = useNuxtApp();
 
 const { loggedIn, session, user } = useUserSession();
-
-const items = [
-  [
-    {
-      label: "Profile",
-      to: "/profile",
-      icon: "i-ph-user-duotone",
-    },
-  ],
-  [
-    {
-      label: "Logout",
-      icon: "i-ph-sign-out-duotone",
-      onSelect: async () => {
-        await $csrfFetch("/api/_auth/session", {
-          method: "DELETE",
-        });
-
-        session.value = {} as UserSession;
-
-        await navigateTo("/");
-      },
-    },
-  ],
-];
 
 const title = useRuntimeConfig().public.name;
 const icon = useAppConfig().app.logo;
