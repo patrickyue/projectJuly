@@ -13,17 +13,9 @@
           lg="3"
           class="text-center justify-center"
         >
-          <v-btn
-            :href="link.to"
-            target="_blank"
-            :text="link.text"
-            variant="text"
-          />
+          <v-btn :href="link.to" target="_blank" :text="link.text" variant="text" />
         </v-col>
-        <v-col
-          cols="12"
-          class="text-center"
-        >
+        <v-col cols="12" class="text-center">
           <div class="flex-1-0-100 text-center mt-2">
             &copy;{{ new Date().getFullYear() }} —
             <strong>{{ componentName }}.&nbsp;</strong>All rights reserved.
@@ -35,7 +27,7 @@
 </template>
 
 <script lang="ts" setup>
-const appConfig = useAppConfig()
-const componentName = appConfig.footer.componentName
-const smallLinks = appConfig.footer.smallLinks
+const appConfig = useAppConfig();
+const componentName = appConfig.footer.componentName;
+const smallLinks = appConfig.footer.smallLinks;
 </script>
